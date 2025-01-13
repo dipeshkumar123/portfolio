@@ -12,7 +12,7 @@ This is a responsive and modern portfolio website built using **React.js**. It s
 
 ## Live Demo
 
-Check out the live version of the project: [Live Demo Link](https://reimagined-spork-q79vg5gj6p5c4w6p-3000.app.github.dev/)
+Check out the live version of the project: [Live Demo Link](https://dipeshkumar123.github.io/portfolio/)
 
 ## Screenshots
 
