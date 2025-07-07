@@ -34,7 +34,7 @@ const Testimonials = ({ isVisible }) => {
       }, 5000);
       return () => clearInterval(timer);
     }
-  }, [isVisible]);
+  }, [isVisible, testimonials.length]);
 
   return (
     <section id="testimonials" className={`py-16 bg-gray-50 transition-opacity duration-700
