@@ -73,6 +73,7 @@ export const formatRepoForDisplay = (repo) => ({
   description: repo.description || 'No description available',
   tags: [repo.language, ...(repo.topics || [])].filter(Boolean),
   url: repo.html_url,
+  homepage: repo.homepage,
   stars: repo.stargazers_count,
   forks: repo.forks_count,
   language: repo.language,

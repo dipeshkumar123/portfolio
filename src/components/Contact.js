@@ -1,16 +1,16 @@
 // components/Contact.jsx
 import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, MessageCircle, ArrowUpRight } from 'lucide-react';
 
 const Contact = ({ isVisible }) => {
   const formFields = ['name', 'email', 'message'];
-  
+
   const socialLinks = [
     {
       icon: Github,
       href: 'https://github.com/dipeshkumar123',
       label: 'GitHub',
-      color: 'hover:text-gray-900'
+      color: 'hover:text-slate-900'
     },
     {
       icon: Linkedin,
@@ -22,137 +22,128 @@ const Contact = ({ isVisible }) => {
       icon: Mail,
       href: 'mailto:panjiyardipesh123@gmail.com',
       label: 'Email',
-      color: 'hover:text-green-600'
+      color: 'hover:text-emerald-600'
     }
   ];
 
   return (
-    <section id="contact" className={`py-16 bg-gradient-to-br from-blue-50 to-purple-50
-      transition-all duration-700 ease-out transform
-      ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4
-            transition-transform duration-500 hover:scale-105">
-            Let's Work Together
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Have a project in mind or want to discuss opportunities? I'd love to hear from you!
+    <section
+      id="contact"
+      className={`relative overflow-hidden py-24 transition-all duration-700 ease-out ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-50 via-white to-purple-50" />
+      <div className="absolute inset-x-0 top-16 -z-10 h-48 bg-gradient-to-r from-blue-200/40 via-purple-200/40 to-cyan-200/40 blur-3xl" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <span className="inline-flex items-center gap-3 rounded-full border border-blue-200/60 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-blue-600 shadow-sm">
+            Collaborate
+          </span>
+          <h2 className="mt-4 text-4xl font-semibold text-slate-900 md:text-5xl">Let’s design the next great experience</h2>
+          <p className="mt-4 text-base text-slate-600 md:text-lg">
+            Whether you’re building a new product, refining a feature or unpacking data insights—drop a line and let’s explore it together.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h3>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology. 
-                Whether you're looking for a developer to join your team or need help with a specific project, 
-                feel free to reach out!
+        <div className="grid gap-10 lg:grid-cols-[0.9fr,1.1fr]">
+          <div className="space-y-6">
+            <div className="rounded-3xl border border-transparent bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 p-10 text-white shadow-xl">
+              <p className="text-sm uppercase tracking-[0.3em] text-blue-200">Say hello</p>
+              <h3 className="mt-3 text-3xl font-semibold">Available for collaborations & open to new challenges</h3>
+              <p className="mt-4 text-sm text-blue-100">
+                Share a brief, your goals or even a raw idea—happy to jam on strategy, architecture and execution.
               </p>
-            </div>
-
-            {/* Contact Methods */}
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-md">
-                <Mail className="w-6 h-6 text-blue-600" />
-                <div>
-                  <p className="font-semibold text-gray-900">Email</p>
-                  <a href="mailto:panjiyardipesh123@gmail.com" 
-                     className="text-blue-600 hover:underline">
-                    panjiyardipesh123@gmail.com
-                  </a>
-                </div>
+              <div className="mt-8 grid gap-3 text-sm text-blue-100">
+                <a href="mailto:panjiyardipesh123@gmail.com" className="inline-flex items-center gap-3 text-blue-100 transition-colors hover:text-white">
+                  <Mail size={18} />
+                  panjiyardipesh123@gmail.com
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/dipesh-panjiyar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 text-blue-100 transition-colors hover:text-white"
+                >
+                  <Linkedin size={18} />
+                  linkedin.com/in/dipesh-panjiyar
+                </a>
+                <a
+                  href="https://github.com/dipeshkumar123"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 text-blue-100 transition-colors hover:text-white"
+                >
+                  <Github size={18} />
+                  github.com/dipeshkumar123
+                </a>
               </div>
-
-              <div className="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-md">
-                <Github className="w-6 h-6 text-gray-900" />
-                <div>
-                  <p className="font-semibold text-gray-900">GitHub</p>
-                  <a href="https://github.com/dipeshkumar123" 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     className="text-blue-600 hover:underline">
-                    github.com/dipeshkumar123
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-md">
-                <Linkedin className="w-6 h-6 text-blue-600" />
-                <div>
-                  <p className="font-semibold text-gray-900">LinkedIn</p>
-                  <a href="https://www.linkedin.com/in/dipesh-panjiyar" 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     className="text-blue-600 hover:underline">
-                    linkedin.com/in/dipesh-panjiyar
-                  </a>
-                </div>
+              <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-semibold text-white">
+                <MessageCircle size={18} />
+                Quick replies within 24 hours
               </div>
             </div>
 
-            {/* Social Links */}
-            <div className="text-center lg:text-left">
-              <p className="text-gray-600 mb-4">Connect with me on:</p>
-              <div className="flex justify-center lg:justify-start space-x-6">
+            <div className="rounded-3xl border border-slate-200/70 bg-white/90 p-8 shadow-lg shadow-slate-900/5 backdrop-blur">
+              <h3 className="text-lg font-semibold text-slate-900">Let’s connect elsewhere</h3>
+              <p className="mt-2 text-sm text-slate-500">Follow for product updates, experiments and insights.</p>
+              <div className="mt-5 flex gap-4">
                 {socialLinks.map((social, index) => (
-                  <a key={index} 
-                     href={social.href} 
-                     target={social.href.startsWith('mailto:') ? '_self' : '_blank'}
-                     rel="noopener noreferrer"
-                     className={`text-gray-600 transition-all duration-300 ease-out transform
-                     ${social.color} hover:scale-125`}
-                     style={{ transitionDelay: `${index * 100}ms` }}
-                     title={social.label}>
-                    <social.icon size={24} />
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target={social.href.startsWith('mailto:') ? '_self' : '_blank'}
+                    rel="noopener noreferrer"
+                    title={social.label}
+                    className={`flex h-12 w-12 items-center justify-center rounded-full border border-slate-200/70 bg-white text-slate-500 transition-transform duration-300 hover:-translate-y-1 hover:border-blue-500/60 ${social.color}`}
+                    style={{ transitionDelay: `${index * 80}ms` }}
+                  >
+                    <social.icon size={22} />
                   </a>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Send me a message</h3>
-            <form className="space-y-6">
+          <div className="rounded-3xl border border-slate-200/70 bg-white/95 p-10 shadow-xl shadow-slate-900/5 backdrop-blur">
+            <h3 className="text-2xl font-semibold text-slate-900">Tell me about your idea</h3>
+            <p className="mt-2 text-sm text-slate-500">Share a few details and I’ll reply with next steps.</p>
+            <form className="mt-8 space-y-6">
               {formFields.map((field, index) => (
-                <div key={field} 
-                  className={`transition-all duration-500 transform
-                  ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
-                  style={{ transitionDelay: `${index * 200}ms` }}>
-                  <label htmlFor={field} className="block text-gray-700 mb-2 capitalize font-medium">
+                <div
+                  key={field}
+                  className={`transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                  style={{ transitionDelay: `${index * 160}ms` }}
+                >
+                  <label htmlFor={field} className="block text-sm font-semibold text-slate-600 capitalize">
                     {field}
                   </label>
                   {field === 'message' ? (
                     <textarea
                       id={field}
                       rows={4}
-                      placeholder={`Your ${field}...`}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg
-                        transition-all duration-300 focus:ring-2 focus:ring-blue-600
-                        focus:border-transparent hover:border-blue-400 resize-none"
+                      placeholder="Share your goals, timelines or ideas..."
+                      className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-slate-50/60 px-4 py-3 text-sm text-slate-600 transition-all duration-300 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-200"
                     />
                   ) : (
                     <input
                       type={field === 'email' ? 'email' : 'text'}
                       id={field}
-                      placeholder={`Your ${field}...`}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg
-                        transition-all duration-300 focus:ring-2 focus:ring-blue-600
-                        focus:border-transparent hover:border-blue-400"
+                      placeholder={`Your ${field}`}
+                      className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-slate-50/60 px-4 py-3 text-sm text-slate-600 transition-all duration-300 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-200"
                     />
                   )}
                 </div>
               ))}
-              <button type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg
-                  transition-all duration-500 ease-out transform font-semibold
-                  hover:from-blue-700 hover:to-purple-700 hover:scale-105 hover:shadow-xl">
-                Send Message
+              <button
+                type="submit"
+                className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:scale-[1.01] hover:shadow-xl"
+              >
+                Send message
+                <ArrowUpRight size={18} />
               </button>
+              <p className="text-xs text-slate-400">Powered by a simple email—no subscriptions or spam. Just genuine collaboration.</p>
             </form>
           </div>
         </div>

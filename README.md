@@ -1,86 +1,67 @@
-# Portfolio Project
+# Dipesh Kumar – Portfolio
 
-This is a responsive and modern portfolio website built using **React.js**. It showcases projects, skills, and contact details in an engaging and visually appealing manner.
+An expressive React + Tailwind CSS portfolio that highlights Dipesh Kumar Panjiyar’s work across product engineering, data storytelling, and collaborative delivery. The site blends animated visuals with purposeful copy, curated GitHub projects, testimonials, and a prominently placed résumé download.
 
-## Features
+## ✨ Highlights
 
-- **Responsive Design:** Works seamlessly on desktop, tablet, and mobile devices.
-- **Dynamic Components:** Leveraging React.js for modular and reusable components.
-- **Interactive UI:** Smooth transitions and animations for an enhanced user experience.
-- **Contact Form:** Allows visitors to get in touch easily.
-- **Customizable:** Codebase is structured for easy updates and modifications.
+- **Hero built for clarity:** Glassmorphism navigation, scroll-progress indicator, and multidimensional hero storytelling with social proof and metrics pulled from GitHub.
+- **Résumé everywhere it matters:** A dedicated download CTA lives in the navbar, hero, and footer, serving `public/Dipesh_Resume_FD.pdf` for easy sharing.
+- **Curated project gallery:** Featured cards merge hand-authored context with live GitHub metadata when available, keeping project stats fresh while letting copy stay on-brand.
+- **Data-rich storytelling:** Skills, experience, testimonials, and contact sections use motion, gradients, and reusable UI primitives to keep the narrative cohesive.
+- **Tailwind-first workflow:** Custom utilities (grid patterns, accent rings, animated blobs) and theme extensions (fonts, shadows, animations) allow rapid iteration without leaving the design system.
 
-## Live Demo
+## 🗂️ Site Structure
 
-Check out the live version of the project: [Live Demo Link](https://dipeshkumar123.github.io/portfolio/)
+- **Navigation & Hero:** Sticky glass navigation with section awareness, animated hero background, role rotation, and high-impact CTAs.
+- **Projects:** `src/components/Projects.js` curates five primary repositories, injecting highlights, tags, and live GitHub metrics through `utils/github.js` helpers.
+- **About, Skills, Experience, Testimonials:** Storytelling-first sections that combine statistics, principles, toolkits, and social proof.
+- **Contact & Footer:** Layered CTA card, social channels, and résumé link to sustain momentum after the scroll experience.
 
-## Screenshots
+## 📄 Résumé Delivery
 
-![Portfolio Homepage](![image](https://github.com/user-attachments/assets/79dc5aab-ba60-4fab-a8bf-1507614634ee)
-)  
+- The downloadable PDF lives at `public/Dipesh_Resume_FD.pdf` and is referenced via root-relative paths (`/Dipesh_Resume_FD.pdf`).
+- Update the file in `public/` whenever a new résumé is available; no code changes are required once the filename stays consistent.
 
-## Installation
+## 🚀 Getting Started
 
-To run this project locally, follow these steps:
+```bash
+# Clone the repository
+git clone https://github.com/dipeshkumar123/portfolio.git
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/dipeshkumar123/portfolio.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd portfolio
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Start the development server:
-   ```bash
-   npm start
-   ```
-5. Open your browser and navigate to `http://localhost:3000`.
+cd portfolio
 
-## Available Scripts
+# Install dependencies
+npm install
 
-In the project directory, you can run:
+# Start the development server
+npm start
 
-### `npm start`
+# Build for production
+npm run build
+```
 
-Runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The app runs on [http://localhost:3000](http://localhost:3000) by default and uses Create React App tooling (`react-scripts`).
 
-## Technologies Used
+## 🧱 Tech Stack
 
-- **React.js:** Front-end framework
-- **Tailwind CSS:** Styling
+- **React 19** with functional components and hooks
+- **Tailwind CSS 3.4** with extended theme tokens (fonts, shadows, keyframes)
+- **lucide-react** iconography
+- **GitHub REST API** (unauthenticated) for project and profile metadata
+- **gh-pages** script ready for static hosting (optional)
 
-## Contribution
+## 🛠 Customisation Notes
 
-Contributions are welcome! If you'd like to contribute, please follow these steps:
+- Update featured projects in `FEATURED_PROJECTS` (see `src/components/Projects.js`) to tweak copy, highlights, or ordering. The runtime merge will pull stars, forks, and updated dates automatically when the repositories are public.
+- Global styling and utility classes live in `src/index.css`, while Tailwind tokens are defined in `tailwind.config.js`.
+- Add or remove sections in `src/App.js` by adjusting the `SECTION_IDS` array and corresponding component imports.
 
-1. Fork the repository.
-2. Create a new branch:
-   ```bash
-   git checkout -b feature/YourFeatureName
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Add your message"
-   ```
-4. Push to the branch:
-   ```bash
-   git push origin feature/YourFeatureName
-   ```
-5. Open a pull request.
+## 📬 Contact
 
-## License
-
-This project is open-source and available under the [MIT License](LICENSE).
-
-## Author
-
-**Dipesh Kumar**  
-[GitHub Profile](https://github.com/dipeshkumar123)  
-[LinkedIn Profile](www.linkedin.com/in/dipesh-panjiyar)
+- Email: [panjiyardipesh123@gmail.com](mailto:panjiyardipesh123@gmail.com)
+- GitHub: [@dipeshkumar123](https://github.com/dipeshkumar123)
+- LinkedIn: [Dipesh Panjiyar](https://www.linkedin.com/in/dipesh-panjiyar)
 
 ---
+
+Crafted with curiosity, empathy, and a love for meaningful digital experiences.

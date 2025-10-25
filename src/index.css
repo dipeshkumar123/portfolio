@@ -1,6 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-slate-50 text-slate-900 selection:bg-blue-200 selection:text-blue-900;
+    background-image: radial-gradient(circle at 10% 20%, rgba(219, 234, 254, 0.6) 0%, transparent 40%), radial-gradient(circle at 90% 70%, rgba(221, 214, 254, 0.5) 0%, transparent 35%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-slate-900;
+  }
+}
 
 /* Custom animations and styles */
 @keyframes fade-in-up {
@@ -78,4 +91,40 @@ html {
 /* Hover glow effect */
 .hover-glow:hover {
   box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+
+  .card-gradient {
+    background-image: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(168, 85, 247, 0.12));
+  }
+
+  .accent-ring {
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.2), 0 15px 45px -20px rgba(59, 130, 246, 0.45);
+  }
+
+  .border-gradient {
+    position: relative;
+  }
+
+  .border-gradient::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.35), rgba(99, 102, 241, 0.35), rgba(168, 85, 247, 0.35));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .squircle {
+    border-radius: 40px;
+  }
 }
